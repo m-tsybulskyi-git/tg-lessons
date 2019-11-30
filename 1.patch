@@ -1,0 +1,195 @@
+Index: .idea/.name
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- .idea/.name	(date 1575148001862)
++++ .idea/.name	(date 1575148001862)
+@@ -0,0 +1,1 @@
++tg-lesson-1
+\ No newline at end of file
+Index: .idea/vcs.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- .idea/vcs.xml	(date 1575155291089)
++++ .idea/vcs.xml	(date 1575155291089)
+@@ -0,0 +1,6 @@
++<?xml version="1.0" encoding="UTF-8"?>
++<project version="4">
++  <component name="VcsDirectoryMappings">
++    <mapping directory="$PROJECT_DIR$" vcs="Git" />
++  </component>
++</project>
+\ No newline at end of file
+Index: .idea/misc.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- .idea/misc.xml	(date 1575148001920)
++++ .idea/misc.xml	(date 1575148001920)
+@@ -0,0 +1,14 @@
++<?xml version="1.0" encoding="UTF-8"?>
++<project version="4">
++  <component name="ExternalStorageConfigurationManager" enabled="true" />
++  <component name="MavenProjectsManager">
++    <option name="originalFiles">
++      <list>
++        <option value="$PROJECT_DIR$/pom.xml" />
++      </list>
++    </option>
++  </component>
++  <component name="ProjectRootManager" version="2" languageLevel="JDK_1_8" project-jdk-name="1.8" project-jdk-type="JavaSDK">
++    <output url="file://$PROJECT_DIR$/out" />
++  </component>
++</project>
+\ No newline at end of file
+Index: .idea/.gitignore
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- .idea/.gitignore	(date 1575156431508)
++++ .idea/.gitignore	(date 1575156431508)
+@@ -0,0 +1,2 @@
++# Default ignored files
++/workspace.xml
+\ No newline at end of file
+Index: .idea/compiler.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- .idea/compiler.xml	(date 1575156437888)
++++ .idea/compiler.xml	(date 1575156437888)
+@@ -0,0 +1,13 @@
++<?xml version="1.0" encoding="UTF-8"?>
++<project version="4">
++  <component name="CompilerConfiguration">
++    <annotationProcessing>
++      <profile name="Maven default annotation processors profile" enabled="true">
++        <sourceOutputDir name="target/generated-sources/annotations" />
++        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
++        <outputRelativeToContentRoot value="true" />
++        <module name="tg-lesson-1" />
++      </profile>
++    </annotationProcessing>
++  </component>
++</project>
+\ No newline at end of file
+Index: pom.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- pom.xml	(date 1575148894794)
++++ pom.xml	(date 1575148894794)
+@@ -0,0 +1,11 @@
++<?xml version="1.0" encoding="UTF-8"?>
++<project xmlns="http://maven.apache.org/POM/4.0.0"
++         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
++         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
++    <modelVersion>4.0.0</modelVersion>
++
++    <groupId>com.mtsybulskyi</groupId>
++    <artifactId>tg-lesson-1</artifactId>
++    <version>1.0-SNAPSHOT</version>
++
++</project>
+\ No newline at end of file
+Index: .idea/libraries/telegrambots_4_4_0_2_jar_with_dependencies.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- .idea/libraries/telegrambots_4_4_0_2_jar_with_dependencies.xml	(date 1575149995510)
++++ .idea/libraries/telegrambots_4_4_0_2_jar_with_dependencies.xml	(date 1575149995510)
+@@ -0,0 +1,9 @@
++<component name="libraryTable">
++  <library name="telegrambots-4.4.0.2-jar-with-dependencies">
++    <CLASSES>
++      <root url="jar://C:/LIB/lib_tgbot-java/telegrambots-4.4.0.2-jar-with-dependencies.jar!/" />
++    </CLASSES>
++    <JAVADOC />
++    <SOURCES />
++  </library>
++</component>
+\ No newline at end of file
+Index: src/main/java/Main.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- src/main/java/Main.java	(date 1575155594447)
++++ src/main/java/Main.java	(date 1575155594447)
+@@ -0,0 +1,36 @@
++import org.telegram.telegrambots.ApiContextInitializer;
++import org.telegram.telegrambots.TelegramBotsApi;
++import org.telegram.telegrambots.api.objects.Message;
++import org.telegram.telegrambots.api.objects.Update;
++import org.telegram.telegrambots.bots.TelegramLongPollingBot;
++import org.telegram.telegrambots.exceptions.TelegramApiRequestException;
++
++public class Main extends TelegramLongPollingBot {
++
++    public static void main(String[] args) {
++
++        ApiContextInitializer.init();
++
++        try {
++            TelegramBotsApi telegramBotsApi = new TelegramBotsApi();
++            telegramBotsApi.registerBot(new Main());
++        } catch (TelegramApiRequestException e) {
++            e.printStackTrace();
++        }
++    }
++
++    public String getBotUsername() {
++        return "tgApiLessons_by44days_bot";
++    }
++
++    @Override
++    public String getBotToken() {
++        return "935812180:AAFfgteJ4tO6dT0xw4Yi3tcfvM3RqrX_2j0";
++    }
++
++    public void onUpdateReceived(Update update) {
++        if (update.hasMessage()) {
++            Message message = update.getMessage();
++        }
++    }
++}
+Index: tg-lesson-1.iml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- tg-lesson-1.iml	(date 1575148016394)
++++ tg-lesson-1.iml	(date 1575148016394)
+@@ -0,0 +1,2 @@
++<?xml version="1.0" encoding="UTF-8"?>
++<module type="JAVA_MODULE" version="4" />
+\ No newline at end of file
+diff --git target/classes/Main.class target/classes/Main.class
+new file mode 100644
+index 0000000000000000000000000000000000000000..0f609a2f8df39c95935e03ac40250f36e94348fa
+GIT binary patch
+literal 1588
+zc$}qF+foxj5IsYHgb*%*f?O2vMk1Fb5D*Anz>+GhMJ)&@`an%K!!i(d!|s6Kga6?d
+z_$n`8X_X(~M_Kl4!cBpKavx@Td-|L{-P60jet-W7Ac@CO)S^3zI1*vpk0ONbFnXe>
+z(9RHg!|015g8m4M2nM2r7}U#97%7Iz3F%1nh#?eDEHIQmb#sED&XkULxw)PdUWRA$
+z<Y_Qni{}@(C-r;DS*}*3PaNh9mrk1A*J)>HioZ8k`4%_w+_8;0<w?g*YxX)N^1}A`
+z`jo5u$%16)F<s9#4%~-Emd=gL$zbAVlymAFgxI!3K}pv+0uyjnY-|c&Jv%tmLb+#?
+z@WxYgGSu2aQO<c^cn)8ulvm@4)8eX&aT#|_P|@|SGhfJYC1!;s<d(=WB;)63<ppWD
+z*;QeYT?7U#s@x20hW^W88KQIUre}$1sc)uA-$=g}9YY=J!x)ZX1oaGw3-_D4q)B3U
+zfKi4g|J(H##&rG`Wz(T4e4pZ%vOB3%j_;7+Du%wXq2bZwU~+U|d~$Mn*;e93O1&D%
+zWd^oCq!#6nvX-}IhGsXsw@ZVo17VEEkj6v|4?*)ge73+7)tRnizjpI^y2B}*)HoYQ
+zLZ7;h65HxIeIt_R<wxOBTl5!0*Y62i`bu~KP42wAwuK`+Y5B&<<mtpkFcdgP?J5p#
+zU4e#A%_(lJWjt=tP4`}AOlV40xIaU5+!nz%|BhTV$A_+D{5(;|8B35fy68_+3;k4p
+z>1m_&3cVS$Gwr><54KB285(G<44e@((i$rU;3}@sUWFz!m%yLs&s9cy=Qou7KxlCv
+z<z~+hRFF}*hwz&(h?qTlsM@9Y5TRO$vB-ZD;ea_rQmRQzGi7Qe&Ne#jpiDY%C!JPP
+z%yqO7z76FR(H3awL_2QK&WNX@q@}M^NT?zD^{+CTkChQBmBEPQUugB;(DqZIUAR?(
+vJ`XAbYN*WEXGCbLnK^1>ZE)C0#dZ<N?SQN)Xjx5(Ok1~cCs1%Vz}@=;!sCnd
+
