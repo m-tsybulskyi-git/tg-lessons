@@ -20,12 +20,12 @@ public class Lesson_1 extends TelegramLongPollingBot {
     }
 
     public String getBotUsername() {
-        return "tgApiLessons_by44days_bot";
+        return [USER_NAME_YOUR_BOT];
     }
 
     @Override
     public String getBotToken() {
-        return "935812180:AAFfgteJ4tO6dT0xw4Yi3tcfvM3RqrX_2j0";
+        return [YOUR_SECRET_TOKEN];
     }
 
     public void onUpdateReceived(Update update) {
