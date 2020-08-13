@@ -1,6 +1,8 @@
-# tg-lessons
-That is Maven project, with using TelegramBots package https://github.com/rubenlagus/TelegramBots
-All lessons is based on personal experience and if you have any offers about new topics on this tutorial
-You can contact with me on telegram @tg44days or instagram @_44days 
+# Java Telegram Bot Lessons 
 
-Stars makes our life more happier <3
+### [1. Bot initialization](https://github.com/m-tsybulskyi-git/tg-lessons/blob/master/src/main/java/Lesson_1.java)  
+### [2. Get information from message](https://github.com/m-tsybulskyi-git/tg-lessons/blob/master/src/main/java/Lesson_2.java)  
+### [3. Using commands and markdown (Echo bot)](https://github.com/m-tsybulskyi-git/tg-lessons/blob/master/src/main/java/Lesson_3.java) 
+### [4. Message with reply keybord](https://github.com/m-tsybulskyi-git/tg-lessons/blob/master/src/main/java/Lesson_2.java)  
+### [5. Message with inline keybord](https://github.com/m-tsybulskyi-git/tg-lessons/blob/master/src/main/java/Lesson_2.java) 
+### [6. Edit/delete message  ](https://github.com/m-tsybulskyi-git/tg-lessons/blob/master/src/main/java/Lesson_3.java) 
